@@ -1,11 +1,12 @@
 package com.itcm.reforaTec.model
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
-data class TreeType(
-    var commonName: String,
-    val scientificName: String,
-    val description: String,
+data class Tree(
+    @StringRes val value: Int,
+    @StringRes val commonName: Int,
+    @StringRes val scientificName: Int,
 
     @DrawableRes val image: Int,
 )
