@@ -26,13 +26,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.itcm.reforaTec.data.DataSource
 import com.itcm.reforaTec.model.Tree
 
 @Composable
-fun TreeScreen(
-    tree: Tree
-) {
+fun TreeScreen() {
+    val dataSource = DataSource()
+    val trees: List<Tree> = dataSource.loadTrees()
+
     var servicesCount by remember { mutableIntStateOf(value = 0) }
     var historyCount by remember { mutableIntStateOf(value = 0) }
 
@@ -41,13 +44,16 @@ fun TreeScreen(
             modifier = Modifier.padding(paddingValues = innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TreeTypeCard(
-                tree = tree,
-                modifier = Modifier.padding(16.dp),
-                servicesCount = servicesCount,
-                historyCount = historyCount,
-                setServicesCount = { servicesCount++ },
-                setHistoryCount = { historyCount++ })
+
+            trees.forEach { tree ->
+                TreeCard(
+                    tree = tree,
+                    modifier = Modifier.padding(16.dp),
+                    servicesCount = servicesCount,
+                    historyCount = historyCount,
+                    setServicesCount = { servicesCount++ },
+                    setHistoryCount = { historyCount++ })
+            }
         }
     }
 }
@@ -68,7 +74,7 @@ fun TreeBottomAppBar() {
 }
 
 @Composable
-fun TreeTypeCard(
+fun TreeCard(
     tree: Tree,
     modifier: Modifier = Modifier,
     servicesCount: Int,
@@ -83,16 +89,12 @@ fun TreeTypeCard(
             Modifier.padding(16.dp)
         ) {
             Text(
-                "Nombre común: ${tree.commonName}",
-                style = MaterialTheme.typography.headlineSmall
+                "Nombre común: ${stringResource(id = tree.commonName)}", style = MaterialTheme.typography.headlineSmall
             )
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text("Nombre científico: ${tree.scientificName}")
+            Text("Nombre científico: ${stringResource(id = tree.scientificName)}")
             Spacer(modifier = Modifier.height(8.dp))
-
-            Text("Descripción: ${tree.description}")
-            Spacer(modifier = Modifier.height(16.dp))
 
             Image(
                 painterResource(id = tree.image),
