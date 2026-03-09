@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.itcm.reforaTec.model.TreeType
+import com.itcm.reforaTec.model.Tree
 import com.itcm.reforaTec.ui.screens.TreeScreen
 import com.itcm.reforaTec.ui.theme.ArbolTypeTheme
 
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val treeType = TreeType(
+            val tree = Tree(
                 commonName = "miArbolito",
                 scientificName = "Roble",
                 description = "Mi arbolito es bonito.",
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             )
 
             ArbolTypeTheme {
-                TreeScreen(treeType)
+                TreeScreen(tree)
             }
         }
     }

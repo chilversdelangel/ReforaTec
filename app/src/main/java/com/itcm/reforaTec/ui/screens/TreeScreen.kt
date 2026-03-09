@@ -27,11 +27,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.itcm.reforaTec.model.TreeType
+import com.itcm.reforaTec.model.Tree
 
 @Composable
 fun TreeScreen(
-    treeType: TreeType
+    tree: Tree
 ) {
     var servicesCount by remember { mutableIntStateOf(value = 0) }
     var historyCount by remember { mutableIntStateOf(value = 0) }
@@ -42,7 +42,7 @@ fun TreeScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             TreeTypeCard(
-                treeType = treeType,
+                tree = tree,
                 modifier = Modifier.padding(16.dp),
                 servicesCount = servicesCount,
                 historyCount = historyCount,
@@ -69,7 +69,7 @@ fun TreeBottomAppBar() {
 
 @Composable
 fun TreeTypeCard(
-    treeType: TreeType,
+    tree: Tree,
     modifier: Modifier = Modifier,
     servicesCount: Int,
     historyCount: Int,
@@ -83,19 +83,19 @@ fun TreeTypeCard(
             Modifier.padding(16.dp)
         ) {
             Text(
-                "Nombre común: ${treeType.commonName}",
+                "Nombre común: ${tree.commonName}",
                 style = MaterialTheme.typography.headlineSmall
             )
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text("Nombre científico: ${treeType.scientificName}")
+            Text("Nombre científico: ${tree.scientificName}")
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text("Descripción: ${treeType.description}")
+            Text("Descripción: ${tree.description}")
             Spacer(modifier = Modifier.height(16.dp))
 
             Image(
-                painterResource(id = treeType.image),
+                painterResource(id = tree.image),
                 contentDescription = "Imagen del árbol.",
                 modifier = Modifier.fillMaxWidth()
             )
