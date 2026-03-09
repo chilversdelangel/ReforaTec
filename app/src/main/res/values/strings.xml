@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ReforaTec</string>
+    
+    <string name="first_tree_value">Gratitud</string>
+    <string name="first_tree_common_name">Cedro</string>
+    <string name="first_tree_scientific_name">Cedrela odorata</string>
+
+    <string name="second_tree_value">Templanza</string>
+    <string name="second_tree_common_name">Palo de Rosa</string>
+    <string name="second_tree_scientific_name">Tabebuia rosea</string>
 </resources>
