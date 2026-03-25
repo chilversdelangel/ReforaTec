@@ -6,7 +6,7 @@ import com.itcm.reforaTec.model.Tree
 class DataSource {
 
     fun loadTrees(): List<Tree> {
-        return listOf<Tree>(
+        return listOf(
             Tree(
                 value = R.string.first_tree_value,
                 commonName = R.string.first_tree_common_name,
