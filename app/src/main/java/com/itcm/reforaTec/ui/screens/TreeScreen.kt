@@ -55,12 +55,16 @@ fun TreeScreen(viewModel: TreeViewModel = viewModel()) {
 
 @Composable
 fun TreeTopAppBar() {
-    TopAppBar(title = { Text("Especie") })
+    TopAppBar(
+        title = { Text("Especie") }
+    )
 }
 
 @Composable
 fun TreeBottomAppBar() {
-    BottomAppBar(Modifier.padding(16.dp)) {
+    BottomAppBar(
+        Modifier.padding(16.dp)
+    ) {
         Text("BottomAppBar de demostración.")
     }
 }
@@ -104,7 +108,7 @@ fun TreeCard(tree: Tree) {
                     }
 
                     Text(
-                        "1",
+                        stringResource(id = tree.id),
                         modifier = Modifier.align(Alignment.TopEnd)
                     )
                 }
