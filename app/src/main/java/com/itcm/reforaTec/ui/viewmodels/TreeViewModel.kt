@@ -8,8 +8,8 @@ import com.itcm.reforaTec.model.Tree
 data class TreeState(
     val servicesCount: Int = 0,
     val historyCount: Int = 0,
-    val customValue: String = "",
-    val customCommonName: String = ""
+    val customValue: String? = null,
+    val customCommonName: String? = null
 )
 
 class TreeViewModel : ViewModel() {
