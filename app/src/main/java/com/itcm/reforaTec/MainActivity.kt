@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.itcm.reforaTec.ui.screens.TreeScreen
+import com.itcm.reforaTec.ui.TreesScreen
 import com.itcm.reforaTec.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AppTheme { TreeScreen() }
+            AppTheme { TreesScreen() }
         }
     }
 }
