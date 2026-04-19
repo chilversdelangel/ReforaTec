@@ -1,8 +1,5 @@
 package com.itcm.reforaTec.ui
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-
 data class TreeState(
     val id: String,
     val imageUri: String,
