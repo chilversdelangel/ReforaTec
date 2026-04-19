@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.itcm.treeType"
+        applicationId = "com.itcm.reforaTec"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
