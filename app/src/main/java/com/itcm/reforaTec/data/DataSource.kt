@@ -1,6 +1,5 @@
 package com.itcm.reforaTec.data
 
-import com.itcm.reforaTec.R
 import com.itcm.reforaTec.model.Tree
 
 class DataSource {
@@ -8,43 +7,25 @@ class DataSource {
     fun loadTrees(): List<Tree> {
         return listOf(
             Tree(
-                id = R.string.first_tree_id,
-                value = R.string.first_tree_value,
-                commonName = R.string.first_tree_common_name,
-                scientificName = R.string.first_tree_scientific_name,
-                image = R.drawable.first_tree_image
+                id = "1",
+                imageUri = "https://caraghnurseries.ie/wp-content/uploads/2024/08/Pinus-strobus-Fastigiata-2-scaled.jpg",
+                commonName = "Pino Blanco",
+                scientificName = "Pinus strobus",
+                value = "Honestidad"
             ),
-
             Tree(
-                id = R.string.second_tree_id,
-                value = R.string.second_tree_value,
-                commonName = R.string.second_tree_common_name,
-                scientificName = R.string.second_tree_scientific_name,
-                image = R.drawable.second_tree_image
+                id = "2",
+                imageUri = "https://caraghnurseries.ie/wp-content/uploads/2017/10/quercus-robur.jpg",
+                commonName = "Roble Común",
+                scientificName = "Quercus robur",
+                value = "Perseverancia"
             ),
-
             Tree(
-                id = R.string.third_tree_id,
-                value = R.string.third_tree_value,
-                commonName = R.string.third_tree_common_name,
-                scientificName = R.string.third_tree_scientific_name,
-                image = R.drawable.first_tree_image
-            ),
-
-            Tree(
-                id = R.string.fourth_tree_id,
-                value = R.string.fourth_tree_value,
-                commonName = R.string.fourth_tree_common_name,
-                scientificName = R.string.fourth_tree_scientific_name,
-                image = R.drawable.second_tree_image
-            ),
-
-            Tree(
-                id = R.string.fifth_tree_id,
-                value = R.string.fifth_tree_value,
-                commonName = R.string.fifth_tree_common_name,
-                scientificName = R.string.fifth_tree_scientific_name,
-                image = R.drawable.first_tree_image
+                id = "3",
+                imageUri = "https://ecosdelbosque.com/sites/default/files/2023-11/Cedrela_odorata_01.jpg",
+                commonName = "Cedro Rojo",
+                scientificName = "Cedrela odorata",
+                value = "Respeto"
             )
         )
     }
